@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+
+set timeout 5
+set user "username_here"
+set password "password_here"
+
+spawn openvpn --config /path/to/file/TRUBA-genel.ovpn
+
+expect "Enter Auth Username: "
+send -- "$user\n"
+expect "Enter Auth Password: "
+send -- "$password\n"
+interact
