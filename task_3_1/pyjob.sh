@@ -12,7 +12,7 @@ start=`date +%s`
 
 # go to file's dir and print all the nuclear genes. Then print another sam file.
 
-cd /truba/home/emyilmaz/study-class/task_3_1/ | python sorting_nuc.py > N_den_cickoy_4784_01_sorted_proper_rmdup_Chr1_py.sam
+cd /path/to/file/ | python sorting_nuc.py > N_den_cickoy_4784_01_sorted_proper_rmdup_Chr1_py.sam
 
 # analyze the bam file
 
@@ -21,4 +21,3 @@ end=`date +%s` # end date
 
 runtime=$((end-start)) # calculate the runtime
 echo "This takes only $runtime second..." # and print work's runtime
-
