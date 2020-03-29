@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+
+set timeout 5
+
+#username and password are settin up as variables.
+set username [exec ./reading_un.sh]
+set password [exec ./reading_pw.sh]
+
+# This bash command is connecting you to vpn
+spawn openvpn --config path/to/file.ovpn
+
+#This is command's response
+expect "Enter Auth Username: "
+# and our reply
+send -- "$username\n"
+expect "Enter Auth Password: "
+send -- "$password\n"
+interact

@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+
+set timeout 5
+
+#password are settin up as variables.
+set password [exec ./reading_pw.sh]
+
+# This bash command is connecting you to server
+spawn ssh username@serveradress.gov.tr
+
+#This is command's response
+expect "username@serveradress.gov.tr's password: "
+# and our reply
+send -- "$password\n"
+interact
