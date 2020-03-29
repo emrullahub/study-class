@@ -7,4 +7,6 @@
 #SBATCH --job-name=job2
 #SBATCH --output=job2.%j.out
 
+# go to program and run it
+
 cd /path/to/file | ./hello.sh

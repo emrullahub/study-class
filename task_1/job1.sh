@@ -6,6 +6,8 @@
 #SBATCH --job-name=job1
 #SBATCH --output=job1.%j.out
 
+
+# run the hello.py
 python /path/to/file/hello.py
 
 
