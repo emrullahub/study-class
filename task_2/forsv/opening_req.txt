@@ -1,5 +1,4 @@
-emyilmaz
-p6xevwhv
-levrek1.ulakbim.gov.tr
-
+username
+password
+servername
 :username and password are taken from this file.
