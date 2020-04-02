@@ -1,4 +1,5 @@
-firstline
-password_here
+emyilmaz
+p6xevwhv
+levrek1.ulakbim.gov.tr
 
 :username and password are taken from this file.

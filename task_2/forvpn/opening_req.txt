@@ -1,4 +1,4 @@
-username_here
-password_here
-
+emyilmaz
+p6xevwhv
+/home/emrus/Documents/truba/TRUBA-genel.ovpn
 :username and password are taken from this file.
