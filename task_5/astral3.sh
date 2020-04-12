@@ -4,10 +4,15 @@
 #SBATCH --partition=shas
 #SBATCH --ntasks=1
 #SBATCH --job-name=job1
-#SBATCH --output=output.%j.out
+#SBATCH --output=output3.sh.%j.out
 
 
-#java -jar /truba/home/emyilmaz/study-class/task_5/ASTRAL/Astral/astral.5.7.3.jar -i /truba/home/emyilmaz/study-class/task_5/ASTRAL/Astral/test_data/song_mammals.424.gene.tre > /truba/home/emyilmaz/study-class/task_5/outut.out
-mkdir -p ~/study-class/task_5/${1}_out && touch ~/study-class/task_5/${1}_out/${1}.out
+start=`date +%s%N`
+mkdir -p ~/study-class/task1/${1}_out
+#touch ~/study-class/task1/${1}_out/${1}.out
 
-java -jar ~/study-class/task_5/ASTRAL/Astral/astral.5.7.3.jar -i $1 | tee ~/study-class/task_5/${1}_out/${1}.out
+java -jar ~/study-class/task_5/ASTRAL/Astral/astral.5.7.3.jar -i $1 | tee ~/study-class/task1/${1}_out/${1}.out
+
+
+end=`date +%s%N` # end date
+echo "This takes only $(echo "scale=3;(${end} - ${start})/(1*10^09)" | bc) seconds"
