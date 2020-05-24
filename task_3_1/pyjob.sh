@@ -7,17 +7,21 @@
 #SBATCH --output=pyjob.%j.out
 
 # set start date
-start=`date +%s`
+
+#start=`date +%s`
 
 
 # go to file's dir and print all the nuclear genes. Then print another sam file.
 
-cd /path/to/file/ | python sorting_nuc.py > N_den_cickoy_4784_01_sorted_proper_rmdup_Chr1_py.sam
+cd /truba/home/emyilmaz/study-class/task_3_1 | time  python sorting_nuc.py > N_den_cickoy_4784_01_sorted_proper_rmdup_Chr1_py.sam
+
+time samtools flagstat ~/study-class/task_3_1/N_den_cickoy_4784_01_sorted_proper_rmdup.bam > ~/study-class/task_3_1/dir/analyze_result.out
 
 # analyze the bam file
 
-samtools flagstat ~/study-class/task_3_1/N_den_cickoy_4784_01_sorted_proper_rmdup.bam > ~/study-class/task_3_1/dir/analyze_result.out 
-end=`date +%s` # end date
+#time samtools flagstat ~/study-class/task_3_1/N_den_cickoy_4784_01_sorted_proper_rmdup.bam > ~/study-class/task_3_1/dir/analyze_result.out 
+#end=`date +%s` # end date
 
-runtime=$((end-start)) # calculate the runtime
-echo "This takes only $runtime second..." # and print work's runtime
+# runtime=$((end-start)) # calculate the runtime
+
+##echo "This takes only $runtime second..." # and print work's runtime

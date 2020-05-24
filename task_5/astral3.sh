@@ -9,10 +9,10 @@
 
 start=`date +%s%N` # start the time
 
-mkdir -p ~/study-class/task1/${1}_out # create a dir named $1_out
+mkdir -p ~/study-class/task_5/${1}_out # create a dir named $1_out
 
 # analyze $1 and send $1's output to $1_out dir.
-java -jar ~/study-class/task_5/ASTRAL/Astral/astral.5.7.3.jar -i $1 | tee ~/study-class/task1/${1}_out/${1}.out
+java -jar ~/study-class/task_5/ASTRAL/Astral/astral.5.7.3.jar -i $1 | tee ~/study-class/task_5/${1}_out/${1}.out
 
 
 end=`date +%s%N` # end date
