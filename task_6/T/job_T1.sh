@@ -3,8 +3,8 @@
 #SBATCH --time=02:00:00
 #SBATCH --partition=shas
 #SBATCH --ntasks=1
-#SBATCH --job-name=bok
-#SBATCH --output=bok.%j.out
+#SBATCH --job-name=T1
+#SBATCH --output=T1.%j.out
 
 
 programname=$0
