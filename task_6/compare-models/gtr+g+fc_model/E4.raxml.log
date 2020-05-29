@@ -1,0 +1,72 @@
+
+RAxML-NG v. 0.9.0 released on 20.05.2019 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+RAxML-NG was called at 28-May-2020 19:15:47 as follows:
+
+./raxml-ng --evaluate --msa ./data/its.fas --model GTR+G+FC --prefix E4 --tree ./T2/T2.raxml.bestTree --threads 2 --seed 2
+
+Analysis options:
+  run mode: Evaluate tree likelihood
+  start tree(s): user
+  random seed: 2
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: PTHREADS (2 threads), thread pinning: OFF
+
+[00:00:00] Reading alignment from file: ./data/its.fas
+[00:00:00] Loaded alignment with 150 taxa and 684 sites
+
+Alignment comprises 1 partitions and 433 patterns
+
+Partition 0: noname
+Model: GTR+FC+G4m
+Alignment sites / patterns: 684 / 433
+Gaps: 14.64 %
+Invariant sites: 47.81 %
+
+
+NOTE: Binary MSA file created: E4.raxml.rba
+
+[00:00:00] Loading user starting tree(s) from: ./T2/T2.raxml.bestTree
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 217 / 3472
+
+Evaluating 1 trees
+
+[00:00:00] Tree #1, initial LogLikelihood: -8482.597763
+
+[00:00:00 -8482.597763] Initial branch length optimization
+[00:00:00 -8478.445654] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] Tree #1, final logLikelihood: -8058.485457
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.386169 (ML),  weights&rates: (0.250000,0.014771) (0.250000,0.171351) (0.250000,0.715870) (0.250000,3.098009) 
+   Base frequencies (empirical): 0.239198 0.262840 0.257696 0.240266 
+   Substitution rates (ML): 0.956089 2.288714 2.517219 0.226138 4.320102 1.000000 
+
+
+Final LogLikelihood: -8058.485457
+
+AIC score: 16728.970913 / AICc score: 17227.336961 / BIC score: 18114.526036
+Free parameters (model + branch lengths): 306
+
+Best ML tree saved to: /truba/home/emyilmaz/study-class/task_6/E4.raxml.bestTree
+Optimized model saved to: /truba/home/emyilmaz/study-class/task_6/E4.raxml.bestModel
+
+Execution log saved to: /truba/home/emyilmaz/study-class/task_6/E4.raxml.log
+
+Analysis started: 28-May-2020 19:15:47 / finished: 28-May-2020 19:15:48
+
+Elapsed time: 0.471 seconds
+
