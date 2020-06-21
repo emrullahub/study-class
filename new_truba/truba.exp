@@ -1,0 +1,24 @@
+#!/usr/bin/expect -f
+
+set basedir [file normalize [file dirname $argv0]]
+set secret_file [open "/path/to/auth_truba" r]
+gets $secret_file username; gets $secret_file password; gets $secret_file ip; gets $secret_file ovpn
+close $secret_file
+
+spawn openvpn --config "${ovpn}" --auth-nocache
+
+expect {
+	"*Username*"	{ send "$username\r"; exp_continue}
+	"*Password:*"	{ send "$password\r"; exp_continue}
+	"*Completed*"	{ spawn ssh "${username}@${ip}" }
+}
+
+expect {
+ "*Are you sure you want to continue*" { send "yes\r"; exp_continue }
+ "*password:*"	{ send "$password\r"; interact }
+}
+
+exit -onexit {
+	exec sudo pkill -9 openvpn
+	puts "Bye bye!"
+}
